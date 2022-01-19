@@ -1,0 +1,9 @@
+// ----------------------------------------------- //
+// ----------------------AH----------------------- //
+// ---------------2021 © Ali Hassan--------------- //
+// ----------------------------------------------- //
+@mixin mobile-small() { @include media(0, 350px){ @content; } }
+@mixin mobile() { @include media(350px, 568px){ @content; } }
+@mixin ipad() { @include media(568px, 834px){ @content; } }
+@mixin desktop() { @include media(834px, 100%){ @content; } }
+@mixin media($from, $to) { @media (min-width: $from) and (max-width: $to) { @content; } }

@@ -1,0 +1,49 @@
+// ----------------------------------------------- //
+// ----------------------AH----------------------- //
+// ---------------2021 © Ali Hassan--------------- //
+// ----------------------------------------------- //
+$mainColor: map-get($colors, main);
+$darkColor: map-get($colors, dark);
+
+// ----------------------------------------------- //
+// -------------------themes---------------------- //
+// ----------------------------------------------- //
+
+@mixin main {
+    p,
+    h1,
+    h2,
+    h3,
+    h4 {
+        color: var(--text-color) !important;
+    }
+}
+
+// ----------------------------------------------- //
+// -------------------dark theme------------------ //
+// ----------------------------------------------- //
+@mixin dark() {
+    $primary-color: map-get($mainColor, primary-color);
+    $dark-main-color: map-get($darkColor, dark-main-color);
+    $bk-body-dark: map-get($darkColor, bk-body-dark);
+
+    .dark {
+        --primary-color: #{$dark-main-color};
+        --secondary-color: #06202b;
+        --bk-body: #{$bk-body-dark};
+        --text-color: #fff;
+        --boder-bottom: 0.2rem solid #fff;
+        --background-color: #{$dark-main-color};
+        --box-shadow: #000000c7 1px 2px 4px 1px;
+        --invert: invert(1);
+
+        @include main();
+    }
+}
+
+@include dark();
+
+// ----------------------------------------------- //
+// ----------------------AH----------------------- //
+// ---------------2021 © Ali Hassan--------------- //
+// ----------------------------------------------- //

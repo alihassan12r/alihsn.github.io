@@ -1,0 +1,614 @@
+/* ----------------------------------------------- */
+/* ----------------------AH----------------------- */
+/* ---------------2021 © Ali Hassan--------------- */
+/* ----------------------------------------------- */
+// ----------------------------------------------- //
+@import "base/init";
+
+/* ----------------------------------------------- */
+/* ---------------------main---------------------- */
+/* ----------------------------------------------- */
+/* ----------------------------------------------- */
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: var(--bk-body);
+  font-family: "Montserrat", monospace, "Consolas", "Arial", "Courier New", Courier;
+  padding: 0px;
+  margin: 0px;
+  @include mobile-small() {
+    font-size: 0.8rem !important;
+  }
+}
+
+input,
+textarea,
+button,
+select,
+a {
+  /* remove the blue highlight of button */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-touch-callout: none;
+  user-select: none;
+}
+
+/* ----------------------------------------------- */
+/* ------------------loading---------------------- */
+/* ----------------------------------------------- */
+/* ----------------------------------------------- */
+.loading {
+  position: fixed;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background: var(--secondary-color);
+  overflow: hidden;
+  // animation: loading-show-animate 0.5s forwards;
+
+  &::before {
+    content: "AH";
+    // height: 58px;
+    // width: 65px;
+    position: relative;
+    opacity: 0.5;
+    font-size: 3.6em;
+    color: rgb(165, 17, 17);
+    font-family: sans-serif, Arial, Verdana;
+    font-weight: bold;
+    animation: loading-ah-animate 0.8s forwards;
+    // background-image: url("../assets/images/ah.png");
+    // background-repeat: no-repeat;
+    // background-size: 100%;
+  }
+
+  span {
+    position: relative;
+    background: rgb(255, 0, 0);
+    width: 10px;
+    height: 10px;
+    animation: scale-doted-animate 1s infinite alternate 0.5s;
+
+    &,
+    &::after,
+    &::before {
+      border-radius: 25%;
+    }
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      background: inherit;
+      width: 100%;
+      height: 100%;
+    }
+    &::before {
+      right: 0px;
+      animation: scale-doted-animate 1s infinite alternate 0s, move-doted-before-animate 0.5s both;
+    }
+    &::after {
+      left: 0px;
+      animation: scale-doted-animate 1s infinite alternate 1s, move-doted-after-animate 0.5s both;
+    }
+  }
+
+  &--close {
+    animation: loading-close-animate 2s forwards;
+    span {
+      transition: opacity 1.2s;
+      opacity: 0;
+      &::before {
+        animation: move-doted-before-animate 0.5s alternate-reverse both;
+      }
+      &::after {
+        animation: move-doted-after-animate 0.5s alternate-reverse both;
+      }
+    }
+
+    &:not(.loading--hide) ~ .body-content {
+      animation: show-body-animate 1s both;
+    }
+  }
+
+  &--hide {
+    display: none;
+  }
+
+  &:not(.loading--close):not(.loading--hide) ~ .body-content,
+  &.loading--close:not(.loading--hide) ~ .body-content {
+    height: 0;
+    overflow: hidden;
+  }
+}
+
+/* ----------------------------------------------- */
+/* --------------------shared css----------------- */
+/* ----------------------------------------------- */
+/* ----------------------------------------------- */
+.button {
+  background: var(--primary-color);
+  color: var(--primary-text-color);
+  border: none;
+  min-height: 25px;
+  /* min-width: 50px; */
+  border-radius: 5px;
+  padding: 2px;
+  margin: 2px;
+  cursor: pointer;
+  &:active {
+    opacity: 0.96;
+  }
+}
+
+.clerfix {
+  clear: both;
+}
+
+.transition {
+  * {
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+.non-visible {
+  visibility: hidden;
+}
+
+/* ----------------------------------------------- */
+/* --------------------container------------------ */
+/* ----------------------------------------------- */
+/* ----------------------------------------------- */
+.body-content {
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+
+  .container {
+    width: 650px;
+    margin: 0 auto;
+
+    @include mobile-small() {
+      width: 90%;
+    }
+    @include mobile() {
+      width: 90%;
+    }
+    @include ipad() {
+      width: 85%;
+    }
+    @include desktop() {
+      width: 80%;
+    }
+  }
+}
+
+/* ----------------------------------------------- */
+/* ---------------navigation bar------------------ */
+/* ----------------------------------------------- */
+/* ----------------------------------------------- */
+
+.navbar {
+  display: flex;
+  align-items: flex-end;
+  // background-color: rgb(34, 29, 29);
+  background: linear-gradient(190deg, var(--primary-color), var(--secondary-color));
+  min-height: 120px;
+
+  .container {
+    display: -ms-grid;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+    align-items: center;
+  }
+
+  & &__img {
+    // border-radius: 20%;
+    overflow: hidden;
+    padding: 5px 10px 0 10px;
+    width: 125px;
+    height: 110px;
+    align-self: end;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    @include mobile-small() {
+      width: 120px;
+      height: 105px;
+      padding-left: 0;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  & &__logo {
+    h2 {
+      color: #eee;
+      // text-shadow: 0.1px 0.1px 0.08px #2f00ff;
+      padding: 0px;
+      margin-top: 10px;
+      margin-bottom: 0px;
+      // text-transform: uppercase;
+    }
+    p {
+      color: #ddd;
+      margin: 0px;
+      font-size: 12px;
+      line-height: 8px;
+    }
+    a {
+      color: #2eace3;
+      display: inline-block;
+      margin: 8px 0px;
+      text-decoration: none;
+    }
+  }
+
+  & &__menu {
+    position: relative;
+    padding-bottom: 10px;
+    ul {
+      &.navbar__items {
+        display: flex;
+        gap: 10px;
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+        .navbar__item {
+          display: inline-block;
+          a {
+            transition: color 0.3s ease-in-out;
+            text-decoration: none;
+            color: #c6c6c6;
+            font-size: 0.9em;
+            font-weight: bold;
+            &:hover {
+              color: #fff;
+            }
+          }
+        }
+        .navbar__item--active a {
+          color: #fff;
+          // border-bottom: 1px solid;
+          // text-shadow: -0.8px -0.3px 0px #212bff;
+        }
+      }
+    }
+  }
+
+  & &__hero-slider {
+    position: absolute;
+    bottom: 4px;
+    height: 2px;
+    background: #fff;
+    transition: all 0.2s ease-in-out 0.05s;
+  }
+}
+
+/* ----------------------------------------------- */
+/* ---------------main body content--------------- */
+/* ----------------------------------------------- */
+/* ----------------------------------------------- */
+
+.content {
+  // background-color: #eee;
+  .container {
+    padding: 10px 0px;
+  }
+
+  & &__aboutme {
+    /* ---------------------------- */
+    /* --about me ----------------- */
+    /* ---------------------------- */
+    h2,
+    p {
+      margin: 0px;
+    }
+    h1 {
+      color: #104d67;
+    }
+    h4 {
+      margin: 15px 0px 5px;
+    }
+    p {
+      color: #212529;
+    }
+  }
+
+  & &__graduated {
+    /* ---------------------------- */
+    /* --graduated ---------------- */
+    /* ---------------------------- */
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+    @include mobile-small() {
+      align-items: center;
+      flex-direction: column;
+    }
+    .graduated__img {
+      min-width: 90px;
+      max-width: 120px;
+      min-height: 95px;
+      max-height: 100px;
+
+      padding: 10px;
+      border-bottom-left-radius: 27%;
+      overflow: hidden;
+      background: url(../assets/images/ah_education.png);
+      background-size: cover;
+      // filter: drop-shadow(5px 5px 5px #222);
+      // border: 1px solid #eee;
+      // box-shadow: -1px -1px 0px 0px #e1e1e1;
+
+      // img {
+      //   width: 100%;
+      //   height: 100%;
+      // }
+    }
+    p {
+      margin: 0px;
+    }
+  }
+
+  & &__find-me {
+    /* ---------------------------- */
+    /* --find me ------------------ */
+    /* ---------------------------- */
+    .find-me__social {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10px;
+      /* gap: 18px; */
+      a {
+        display: inline-block;
+        font-size: 1.5em;
+        margin-right: 1em;
+        &::after {
+          content: "";
+          display: block;
+          width: 23px;
+          height: 23px;
+          overflow: hidden;
+          margin: 0px 0px 7px 0px;
+          background: transparent;
+          background-size: cover;
+        }
+        &[title="twitter"]::after {
+          background-image: url("../assets/images/ic_twitter.svg");
+        }
+        &[title="facebook"]::after {
+          background-image: url("../assets/images/ic_facebook.svg");
+        }
+        &[title="linkedin"]::after {
+          background-image: url("../assets/images/ic_linkedin.svg");
+        }
+        &[title="github"]::after {
+          background-image: url("../assets/images/ic_github.svg");
+          filter: var(--invert);
+        }
+        &[title="sarahah"]::after {
+          border-radius: 50%;
+          border: 2px solid #0fc;
+          background-image: url("../assets/images/ic_sarahah.png");
+          background-color: #fff !important;
+        }
+      }
+    }
+
+    h4 {
+      margin-bottom: 2px;
+    }
+  }
+}
+
+/* ----------------------------------------------- */
+/* ---------------footer-------------------------- */
+/* ----------------------------------------------- */
+/* ----------------------------------------------- */
+
+.footer-content {
+  background: linear-gradient(179deg, var(--primary-color), var(--secondary-color));
+  color: rgba(255, 255, 255, 0.7);
+  padding: 5px 0px;
+  margin-top: 50px;
+}
+
+/* ----------------------------------------------- */
+/* ---------------tabs---------------------------- */
+/* ----------------------------------------------- */
+/* ----------------------------------------------- */
+
+.tab {
+  display: none;
+  &--active {
+    display: block;
+  }
+}
+
+/* ----------------------------------------------- */
+/* ---------------options------------------------- */
+/* ----------------------------------------------- */
+/* ----------------------------------------------- */
+
+.option {
+  position: fixed;
+  bottom: 84px;
+  right: 17px;
+
+  .option_body {
+    /* ---------------------------- */
+    /* --option body -------------- */
+    /* ---------------------------- */
+    // border: 1px solid #e8e8e8;
+    padding: 5px;
+    border-radius: 10px;
+  }
+
+  .options__btn {
+    /* ---------------------------- */
+    /* -- option button ----------- */
+    /* ---------------------------- */
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    outline: none;
+  }
+
+  .btn--show-option {
+    position: fixed;
+    z-index: 3;
+    bottom: 35px;
+    right: 10px;
+    height: 40px;
+    width: 40px;
+    box-shadow: #00000066 0px 4px 4px;
+    transition: 0.2s;
+    border-bottom: var(--boder-bottom);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    span {
+      /* ---------------------------- */
+      /* -- hamburger menu ---------- */
+      /* ---------------------------- */
+      position: relative;
+      cursor: pointer;
+      display: inline-block;
+      background: white;
+      border-radius: 2px;
+      width: 60%;
+      height: 3px;
+      transition: 0.2s;
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        background: white;
+        border-radius: 2px;
+        width: 100%;
+        height: 3px;
+        transition: 0.2s;
+        left: 0px;
+      }
+      &::before {
+        top: 7px;
+      }
+      &::after {
+        top: -7px;
+      }
+    }
+  }
+
+  .btn--show-option--clicked {
+    /* ------------------------------------ */
+    /* -- show option button clicked ------ */
+    /* ------------------------------------ */
+    transform: scale(0.9);
+    span {
+      transform: rotate(-45deg);
+      &::before {
+        top: 0px;
+        left: 0px;
+        transform: rotate(90deg);
+      }
+      &::after {
+        top: -30px;
+        opacity: 0;
+      }
+    }
+  }
+
+  .option_menu {
+    /* ---------------------------- */
+    /* -- option menu ------------- */
+    /* ---------------------------- */
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding: 10px;
+    width: 170px;
+    height: 50px;
+    background: var(--background-color) !important;
+    border-radius: 5px 5px 0px 30px;
+    box-shadow: var(--box-shadow);
+    transition: all 0.3s ease-in-out;
+    color: var(--text-color);
+    border-bottom: var(--boder-bottom);
+  }
+
+  .option_menu--active {
+    opacity: 1;
+    height: 200px;
+  }
+
+  .btn--dark {
+    width: 30px;
+    height: 30px;
+    background: var(--bk-body-dark);
+    box-shadow: 0px 0px 3px 1px #6e35ff;
+  }
+
+  .btn--light {
+    width: 30px;
+    height: 30px;
+    background: #fff;
+    box-shadow: 0px 0px 3px 1px #bbbbbb;
+  }
+
+  .checkbox-input {
+    /* ----------------------------- */
+    /* -- theme checkbox ----------- */
+    /* ----------------------------- */
+    position: relative;
+    appearance: none;
+    width: 40px;
+    height: 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    background: var(--bk-body-dark);
+    box-shadow: 0px 0px 3px 1px #616161;
+    transition: 0.3s;
+    outline: none;
+    &::after {
+      content: "";
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      left: 0;
+      border-radius: 20px;
+      background: #fff;
+      box-shadow: 0px 0px 3px 1px #616161;
+      transition: 0.3s;
+    }
+    &:checked {
+      background: #fff;
+      box-shadow: 0px 0px 3px 1px #bbbbbb;
+    }
+    &:checked::after {
+      left: 20px;
+      background: #000;
+      box-shadow: 0px 0px 3px 1px #bbbbbb;
+    }
+  }
+}
+
+/* ----------------------------------------------- */
+/* ----------------------AH----------------------- */
+/* ---------------2021 © Ali Hassan--------------- */
+/* ----------------------------------------------- */
+
+/*# sourceMappingURL=style.css.map */
