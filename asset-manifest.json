@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/alihsn.github.io/static/css/main.e9a0dbfb.chunk.css",
+    "main.js": "/alihsn.github.io/static/js/main.2ef92264.chunk.js",
+    "main.js.map": "/alihsn.github.io/static/js/main.2ef92264.chunk.js.map",
+    "runtime-main.js": "/alihsn.github.io/static/js/runtime-main.34408848.js",
+    "runtime-main.js.map": "/alihsn.github.io/static/js/runtime-main.34408848.js.map",
+    "static/js/2.336d8414.chunk.js": "/alihsn.github.io/static/js/2.336d8414.chunk.js",
+    "static/js/2.336d8414.chunk.js.map": "/alihsn.github.io/static/js/2.336d8414.chunk.js.map",
+    "index.html": "/alihsn.github.io/index.html",
+    "static/css/main.e9a0dbfb.chunk.css.map": "/alihsn.github.io/static/css/main.e9a0dbfb.chunk.css.map",
+    "static/js/2.336d8414.chunk.js.LICENSE.txt": "/alihsn.github.io/static/js/2.336d8414.chunk.js.LICENSE.txt",
+    "static/media/_header.scss": "/alihsn.github.io/static/media/ah_profile.6d6efc52.png",
+    "static/media/_aboutTab.scss": "/alihsn.github.io/static/media/ah_education.e7822953.png",
+    "static/media/_contactTab.scss": "/alihsn.github.io/static/media/ic_twitter.d608a603.svg",
+    "static/media/index.scss": "/alihsn.github.io/static/media/montserrat-light.f7bb2606.woff2"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.34408848.js",
+    "static/js/2.336d8414.chunk.js",
+    "static/css/main.e9a0dbfb.chunk.css",
+    "static/js/main.2ef92264.chunk.js"
+  ]
+}
