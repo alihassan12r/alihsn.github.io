@@ -1,0 +1,211 @@
+@import '../helper/utls';
+
+/* -- options -- */
+.ah-content--loading .options-container .option {
+  animation-delay: 2s !important;
+}
+
+.options-container {
+  .option {
+    position: fixed;
+    z-index: 1;
+    bottom: 20px;
+    right: -80px;
+    animation: option-enter-animate-lg 0.5s cubic-bezier(0.6, 0.04, 0.98, 0.335) forwards;
+    @include mobile-only() {
+      position: relative;
+      height: 45px;
+      bottom: 0;
+      right: 55px;
+      animation-name: option-enter-animate;
+    }
+
+    .options__btn {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      overflow: hidden;
+      outline: none;
+
+      @include mobile-only() {
+        border-radius: 0;
+      }
+
+      &--show-option {
+        position: absolute;
+        z-index: 3;
+        bottom: 0;
+        right: 0;
+        height: 40px;
+        width: 40px;
+        box-shadow: #00000066 0px 4px 4px;
+        transition: 0.2s;
+        border-bottom: var(--boder-bottom);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        @include mobile-only() {
+          box-shadow: none;
+          border-bottom: none;
+          background: transparent;
+          left: 9px;
+        }
+
+        span {
+          /* -- hamburger menu -- */
+          position: relative;
+          cursor: pointer;
+          display: inline-block;
+          background: white;
+          border-radius: 2px;
+          width: 60%;
+          height: 3px;
+          transition: 0.2s;
+          &::before,
+          &::after {
+            content: '';
+            position: absolute;
+            background: white;
+            border-radius: 2px;
+            width: 100%;
+            height: 3px;
+            transition: 0.2s;
+            left: 0px;
+          }
+          &::before {
+            top: 7px;
+          }
+          &::after {
+            top: -7px;
+          }
+        }
+      }
+
+      &--clicked {
+        transform: scale(0.9);
+        span {
+          transform: rotate(-45deg);
+
+          &::before {
+            top: 0px;
+            left: 0px;
+            transform: rotate(90deg);
+          }
+          &::after {
+            top: -30px;
+            opacity: 0;
+            @include mobile-only() {
+              top: 0;
+            }
+          }
+        }
+      }
+    }
+
+    .option_menu {
+      /* -- option menu -- */
+      position: absolute;
+      bottom: 48px;
+      right: 8px;
+      opacity: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      padding: 10px;
+      width: 170px;
+      height: 50px;
+      background: var(--background-color) !important;
+      border-radius: 5px 5px 0px 30px;
+      box-shadow: var(--box-shadow);
+      transition: all 0.3s ease-in-out;
+      color: var(--text-color);
+      border-bottom: var(--boder-bottom);
+      @include mobile-only() {
+        top: 45px;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        align-content: center;
+        justify-content: center;
+        text-align: center;
+        flex-direction: row;
+        border-radius: 0;
+        width: 100vw;
+      }
+
+      .option_body {
+        /* -- option body -- */
+        // border: 1px solid #e8e8e8;
+        padding: 5px;
+        border-radius: 10px;
+        @include mobile-only() {
+          padding: 0;
+        }
+
+        .btn--dark {
+          width: 30px;
+          height: 30px;
+          background: var(--bk-body-dark);
+          box-shadow: 0px 0px 3px 1px #6e35ff;
+        }
+
+        .btn--light {
+          width: 30px;
+          height: 30px;
+          background: #fff;
+          box-shadow: 0px 0px 3px 1px #bbbbbb;
+        }
+
+        .checkbox-input {
+          /* -- theme checkbox -- */
+          position: relative;
+          appearance: none;
+          width: 40px;
+          height: 20px;
+          border-radius: 10px;
+          cursor: pointer;
+          background: var(--bk-body-dark);
+          box-shadow: 0px 0px 3px 1px #616161;
+          transition: 0.3s;
+          outline: none;
+          @include mobile-only() {
+            margin: 0 10px;
+          }
+          &::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            left: 0;
+            border-radius: 20px;
+            background: #fff;
+            box-shadow: 0px 0px 3px 1px #616161;
+            transition: 0.3s;
+          }
+          &:checked {
+            background: #fff;
+            box-shadow: 0px 0px 3px 1px #bbbbbb;
+          }
+          &:checked::after {
+            left: 20px;
+            background: #000;
+            box-shadow: 0px 0px 3px 1px #bbbbbb;
+          }
+        }
+      }
+
+      &--active {
+        opacity: 1;
+        height: 200px;
+        @include mobile-only() {
+          height: 100vh;
+          box-sizing: border-box;
+          box-shadow: none;
+          border-bottom: none;
+        }
+      }
+    }
+  }
+}

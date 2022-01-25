@@ -1,0 +1,37 @@
+
+// --------- AH -------- //
+// --2021 © Ali Hassan-- //
+// --------------------- //
+
+$themes: ('light', 'dark');
+$colors: (
+  main: (
+    primary-color: #104d67,
+    secondary-color: #0a3547,
+    bk-body: #fff,
+    background-color: #fff,
+    boder-bottom: none,
+    text-color: #212529,
+    box-shadow: #b5b5b5c7 -1px 1px 2px 1px,
+    active-text: #fff,
+    unactive-text: #c6c6c6,
+    invert: none,
+  ),
+  dark: (
+    bk-body-dark: #191919,
+    dark-main-color: #092936,
+  ),
+);
+// --root css variables-- //
+:root {
+  @each $group, $content in $colors {
+    @each $color, $hex in $content {
+      --#{$color}: #{$hex};
+    }
+  }
+}
+
+// --------- AH -------- //
+// --2021 © Ali Hassan-- //
+// --------------------- //
+

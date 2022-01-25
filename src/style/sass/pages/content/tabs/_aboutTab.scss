@@ -1,0 +1,45 @@
+@import '../../../helper/utls';
+
+.content {
+  & &__aboutme {
+    h2,
+    p {
+      margin: 0px;
+    }
+    h1 {
+      color: #104d67;
+    }
+    h4 {
+      margin: 15px 0px 5px;
+    }
+    p {
+      color: #212529;
+    }
+  }
+
+  & &__graduated {
+    /* -- graduated -- */
+    display: flex;
+    align-items: flex-end;
+    gap: 10px;
+    @include mobile-small() {
+      align-items: center;
+      flex-direction: column;
+    }
+    p {
+      margin: 0px;
+    }
+    .graduated__img {
+      min-width: 90px;
+      width: 90px;
+      max-width: 120px;
+      min-height: 95px;
+      max-height: 100px;
+      padding: 10px;
+      border-bottom-left-radius: 27%;
+      overflow: hidden;
+      background: url(/assets/images/ah_education.png);
+      background-size: cover;
+    }
+  }
+}

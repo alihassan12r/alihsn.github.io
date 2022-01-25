@@ -1,0 +1,80 @@
+@import '../../../helper/utls';
+
+.content {
+  #section__contact {
+    @include mobile-only() {
+      height: 100vh;
+      .container {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+
+  & &__find-me {
+    /* -- find me -- */
+    .find-me__social {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 10px;
+      /* gap: 18px; */
+      a {
+        display: inline-block;
+        font-size: 1.5em;
+        margin-right: 1em;
+        @include mobile-only() {
+          margin: 20px 0;
+          font-size: 3em;
+          height: 40px;
+          width: 40px;
+        }
+        &::after {
+          content: '';
+          display: block;
+          width: 23px;
+          height: 23px;
+          overflow: hidden;
+          margin: 0px 0px 7px 0px;
+          background: transparent;
+          background-size: cover;
+          @include mobile-only() {
+            width: 100%;
+            height: 100%;
+          }
+        }
+        &[title='twitter']::after {
+          background-image: url('/assets/images/ic_twitter.svg');
+        }
+        &[title='facebook']::after {
+          background-image: url('/assets/images/ic_facebook.svg');
+        }
+        &[title='linkedin']::after {
+          background-image: url('/assets/images/ic_linkedin.svg');
+        }
+        &[title='github']::after {
+          background-image: url('/assets/images/ic_github.svg');
+          filter: var(--invert);
+        }
+        &[title='sarahah']::after {
+          border-radius: 50%;
+          border: 2px solid #0fc;
+          background-image: url('/assets/images/ic_sarahah.png');
+          background-color: #fff !important;
+        }
+      }
+
+      @include mobile-only() {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    h4 {
+      margin-bottom: 2px;
+    }
+  }
+}

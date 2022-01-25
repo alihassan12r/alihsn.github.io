@@ -1,0 +1,86 @@
+// --------- AH -------- //
+// --2021 © Ali Hassan-- //
+// --------------------- //
+
+// ----------------------- //
+// -- loading keyframes -- //
+// ----------------------- //
+
+// loading page keyframes
+@keyframes loading-close-animate {
+  20% {
+    background: var(--secondary-color);
+  }
+  30% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    background: var(--bk-body);
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes loading-ah-animate {
+  100% {
+    opacity: 1;
+  }
+}
+
+// doted keyframes
+@keyframes move-doted-before-animate {
+  0% {
+    right: 0;
+  }
+  100% {
+    right: 24px;
+  }
+}
+
+@keyframes move-doted-after-animate {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 24px;
+  }
+}
+
+@keyframes scale-doted-animate {
+  50% {
+    background: rgb(255, 0, 0);
+  }
+  100% {
+    background: rgba(255, 0, 0, 0.459);
+  }
+}
+
+@keyframes header-visible-animate {
+  from {
+    max-height: 0;
+  }
+  to {
+    max-height: 200px;
+  }
+}
+
+@keyframes option-enter-animate {
+  to {
+    right: 0;
+  }
+}
+
+@keyframes option-enter-animate-lg {
+  to {
+    right: 20px;
+  }
+}
+
+// --------- AH -------- //
+// --2021 © Ali Hassan-- //
+// --------------------- //

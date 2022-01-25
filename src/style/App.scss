@@ -1,0 +1,8 @@
+.AH {
+  .ah-content {
+    height: 100vh;
+    position: relative;
+    display: grid;
+    grid-template-rows: [header] auto [body] 1fr [footer] auto;
+  }
+}

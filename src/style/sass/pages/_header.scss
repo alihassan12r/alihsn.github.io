@@ -1,0 +1,116 @@
+@import '../helper/utls';
+
+/* -- navigation bar -- */
+.navbar {
+  display: flex;
+  align-items: flex-end;
+  // background-color: rgb(34, 29, 29);
+  background: linear-gradient(190deg, var(--primary-color), var(--secondary-color));
+  min-height: 120px;
+  @include mobile-only() {
+    min-height: 40px;
+    align-items: center;
+  }
+  .container {
+    display: -ms-grid;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    @include mobile-only() {
+      align-items: center;
+      justify-content: center;
+    }
+    @include mobile-only(){
+      width: 100%;
+    }
+  }
+  &__img {
+    // border-radius: 20%;
+    content: url('/assets/images/ah_profile.png');
+    background-image: url('/assets/images/ah_profile.png');
+    overflow: hidden;
+    padding: 5px 10px 0 10px;
+    width: 148px;
+    height: 116px;
+    align-self: end;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    @include mobile-only() {
+      content: url('/assets/images/ah.png');
+      background-image: url('/assets/images/ah.png');
+      width: 60px;
+      height: 40px;
+      align-self: center;
+      justify-self: center;
+      grid-column-start: 2;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  & &__logo {
+    @include mobile-only() {
+      display: none;
+    }
+    h2 {
+      color: #eee;
+      // text-shadow: 0.1px 0.1px 0.08px #2f00ff;
+      padding: 0px;
+      margin-top: 10px;
+      margin-bottom: 0px;
+      // text-transform: uppercase;
+    }
+    p {
+      color: #ddd;
+      margin: 0px;
+      font-size: 12px;
+      line-height: 8px;
+    }
+    a {
+      color: #2eace3;
+      display: inline-block;
+      margin: 8px 0px;
+      text-decoration: none;
+    }
+  }
+  & &__menu {
+    position: relative;
+    padding-bottom: 10px;
+    @include mobile-only() {
+      display: none;
+    }
+    ul {
+      &.navbar__items {
+        display: flex;
+        gap: 10px;
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+        .navbar__item {
+          display: inline-block;
+          button {
+            transition: color 0.3s ease-in-out;
+            text-decoration: none;
+            color: #c6c6c6;
+            font-size: 0.9em;
+            &:hover {
+              color: #fff;
+            }
+          }
+        }
+        .navbar__item--active button {
+          color: #fff;
+          // border-bottom: 1px solid;
+          // text-shadow: -0.8px -0.3px 0px #212bff;
+        }
+      }
+    }
+  }
+  & &__hero-slider {
+    position: absolute;
+    bottom: 4px;
+    height: 2px;
+    background: #fff;
+    transition: all 0.2s ease-in-out 0.05s;
+  }
+}
