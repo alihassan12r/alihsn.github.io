@@ -1,24 +1,23 @@
 {
   "files": {
-    "main.css": "/alihsn.github.io/static/css/main.50c25002.chunk.css",
-    "main.js": "/alihsn.github.io/static/js/main.5b908048.chunk.js",
-    "main.js.map": "/alihsn.github.io/static/js/main.5b908048.chunk.js.map",
+    "main.css": "/alihsn.github.io/static/css/main.fb332159.chunk.css",
+    "main.js": "/alihsn.github.io/static/js/main.156d9467.chunk.js",
+    "main.js.map": "/alihsn.github.io/static/js/main.156d9467.chunk.js.map",
     "runtime-main.js": "/alihsn.github.io/static/js/runtime-main.34408848.js",
     "runtime-main.js.map": "/alihsn.github.io/static/js/runtime-main.34408848.js.map",
     "static/js/2.7fb7ec83.chunk.js": "/alihsn.github.io/static/js/2.7fb7ec83.chunk.js",
     "static/js/2.7fb7ec83.chunk.js.map": "/alihsn.github.io/static/js/2.7fb7ec83.chunk.js.map",
     "index.html": "/alihsn.github.io/index.html",
-    "static/css/main.50c25002.chunk.css.map": "/alihsn.github.io/static/css/main.50c25002.chunk.css.map",
+    "static/css/main.fb332159.chunk.css.map": "/alihsn.github.io/static/css/main.fb332159.chunk.css.map",
     "static/js/2.7fb7ec83.chunk.js.LICENSE.txt": "/alihsn.github.io/static/js/2.7fb7ec83.chunk.js.LICENSE.txt",
     "static/media/_header.scss": "/alihsn.github.io/static/media/ah_profile.6d6efc52.png",
     "static/media/_aboutTab.scss": "/alihsn.github.io/static/media/ah_education.e7822953.png",
-    "static/media/_contactTab.scss": "/alihsn.github.io/static/media/ic_twitter.d608a603.svg",
-    "static/media/index.scss": "/alihsn.github.io/static/media/montserrat-light.f7bb2606.woff2"
+    "static/media/_contactTab.scss": "/alihsn.github.io/static/media/ic_twitter.d608a603.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.34408848.js",
     "static/js/2.7fb7ec83.chunk.js",
-    "static/css/main.50c25002.chunk.css",
-    "static/js/main.5b908048.chunk.js"
+    "static/css/main.fb332159.chunk.css",
+    "static/js/main.156d9467.chunk.js"
   ]
 }
