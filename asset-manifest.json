@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/alihsn.github.io/static/css/main.53131a7d.chunk.css",
-    "main.js": "/alihsn.github.io/static/js/main.bfacc58a.chunk.js",
-    "main.js.map": "/alihsn.github.io/static/js/main.bfacc58a.chunk.js.map",
+    "main.css": "/alihsn.github.io/static/css/main.2e2b98f6.chunk.css",
+    "main.js": "/alihsn.github.io/static/js/main.01129038.chunk.js",
+    "main.js.map": "/alihsn.github.io/static/js/main.01129038.chunk.js.map",
     "runtime-main.js": "/alihsn.github.io/static/js/runtime-main.34408848.js",
     "runtime-main.js.map": "/alihsn.github.io/static/js/runtime-main.34408848.js.map",
     "static/js/2.4a3f7546.chunk.js": "/alihsn.github.io/static/js/2.4a3f7546.chunk.js",
     "static/js/2.4a3f7546.chunk.js.map": "/alihsn.github.io/static/js/2.4a3f7546.chunk.js.map",
     "index.html": "/alihsn.github.io/index.html",
-    "static/css/main.53131a7d.chunk.css.map": "/alihsn.github.io/static/css/main.53131a7d.chunk.css.map",
+    "static/css/main.2e2b98f6.chunk.css.map": "/alihsn.github.io/static/css/main.2e2b98f6.chunk.css.map",
     "static/js/2.4a3f7546.chunk.js.LICENSE.txt": "/alihsn.github.io/static/js/2.4a3f7546.chunk.js.LICENSE.txt",
     "static/media/_header.scss": "/alihsn.github.io/static/media/ah_profile.6d6efc52.png",
     "static/media/_aboutTab.scss": "/alihsn.github.io/static/media/ah_education.e7822953.png",
@@ -17,7 +17,7 @@
   "entrypoints": [
     "static/js/runtime-main.34408848.js",
     "static/js/2.4a3f7546.chunk.js",
-    "static/css/main.53131a7d.chunk.css",
-    "static/js/main.bfacc58a.chunk.js"
+    "static/css/main.2e2b98f6.chunk.css",
+    "static/js/main.01129038.chunk.js"
   ]
 }
