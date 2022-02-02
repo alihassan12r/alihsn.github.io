@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/alihsn.github.io/static/css/main.6e8095c3.chunk.css",
-    "main.js": "/alihsn.github.io/static/js/main.be59c0f5.chunk.js",
-    "main.js.map": "/alihsn.github.io/static/js/main.be59c0f5.chunk.js.map",
+    "main.js": "/alihsn.github.io/static/js/main.4f1b914b.chunk.js",
+    "main.js.map": "/alihsn.github.io/static/js/main.4f1b914b.chunk.js.map",
     "runtime-main.js": "/alihsn.github.io/static/js/runtime-main.34408848.js",
     "runtime-main.js.map": "/alihsn.github.io/static/js/runtime-main.34408848.js.map",
     "static/js/2.4a3f7546.chunk.js": "/alihsn.github.io/static/js/2.4a3f7546.chunk.js",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.34408848.js",
     "static/js/2.4a3f7546.chunk.js",
     "static/css/main.6e8095c3.chunk.css",
-    "static/js/main.be59c0f5.chunk.js"
+    "static/js/main.4f1b914b.chunk.js"
   ]
 }
