@@ -1,12 +1,13 @@
-import React from 'react';
 import '../style/sass/pages/_options.scss';
+
+import React from 'react';
 import { mobileOnly } from '../utls/jsCommon';
+import { isDarkTheme, setDarkTheme } from '../utls/theme';
 
 const Options = function () {
   let optionButtons = null;
   let optionMenu = null;
   let btnDark = null;
-  let transTimeout = null;
   let ahDocument = null;
   let isOpen = false;
 
@@ -21,28 +22,9 @@ const Options = function () {
     optionButtons.onclick = () => openCloseOptionsMenu();
   };
 
-  const transitionForDocument = () => {
-    document.documentElement.classList.add('transition');
-    if (transTimeout != null) window.clearTimeout(transTimeout);
-    transTimeout = window.setTimeout(() => {
-      document.documentElement.classList.remove('transition');
-    }, 1000);
-  };
-
-  const setDarkTheme = () => {
-    transitionForDocument();
-    document.documentElement.classList.toggle('dark');
-  };
-
   const setOnDarkChange = () => {
     btnDark.onchange = () => setDarkTheme();
-  };
-
-  const initDarkThemeOnTime = (hIn24) => {
-    if (hIn24 <= 4 || hIn24 >= 18) {
-      setDarkTheme();
-      btnDark.checked = true;
-    }
+    btnDark.checked = isDarkTheme();
   };
 
   React.useEffect(() => {
@@ -52,11 +34,6 @@ const Options = function () {
     ahDocument = document.documentElement;
     setOnOptionsClick();
     setOnDarkChange();
-  }, []);
-
-  React.useEffect(() => {
-    const hIn24 = new Date().getHours();
-    initDarkThemeOnTime(hIn24);
   }, []);
 
   React.useEffect(() => {

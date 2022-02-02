@@ -1,6 +1,11 @@
 @import '../../../helper/utls';
 
 .content {
+  #section__aboutme {
+    @include mobile-only() {
+    }
+  }
+
   & &__aboutme {
     h2,
     p {
@@ -19,8 +24,8 @@
 
   & &__graduated {
     /* -- graduated -- */
-    display: flex;
-    align-items: flex-end;
+    @extend %display-flex;
+    @extend %flex-align-items-end;
     gap: 10px;
     @include mobile-small() {
       align-items: center;
@@ -30,6 +35,7 @@
       margin: 0px;
     }
     .graduated__img {
+      @extend %overflow-hidden;
       min-width: 90px;
       width: 90px;
       max-width: 120px;
@@ -37,7 +43,6 @@
       max-height: 100px;
       padding: 10px;
       border-bottom-left-radius: 27%;
-      overflow: hidden;
       background: url(/assets/images/ah_education.png);
       background-size: cover;
     }

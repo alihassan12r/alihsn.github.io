@@ -1,16 +1,6 @@
 @import './helper/utls';
 @import './base/_init.scss';
 
-%font-family {
-  font-family: 'Montserrat', monospace, 'Consolas', 'Arial', 'Courier New', Courier;
-}
-%bold-text {
-  font-weight: bold;
-}
-%height-100 {
-  height: 100%;
-}
-
 html {
   @extend %height-100;
   overflow-x: hidden;
@@ -21,9 +11,9 @@ html {
   }
 
   body {
-    background: var(--bk-body);
     @extend %font-family;
     @extend %height-100;
+    background: var(--bk-body);
     padding: 0px;
     margin: 0px;
 
@@ -61,10 +51,10 @@ html {
     }
 
     .btn {
+      @extend %background-primary;
+      @extend %color-primary;
       border: none;
       cursor: pointer;
-      background: var(--primary-color);
-      color: var(--primary-text-color);
       min-height: 25px;
       border-radius: 5px;
       padding: 2px;
@@ -119,7 +109,7 @@ html {
     overflow-y: scroll;
     body {
       height: 100%;
-      overflow: hidden;
+      @extend %overflow-hidden;
     }
   }
 }

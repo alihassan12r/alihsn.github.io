@@ -2,8 +2,8 @@
 
 /* -- navigation bar -- */
 .navbar {
-  display: flex;
-  align-items: flex-end;
+  @extend %display-flex;
+  @extend %flex-align-items-end;
   // background-color: rgb(34, 29, 29);
   background: linear-gradient(190deg, var(--primary-color), var(--secondary-color));
   min-height: 120px;
@@ -16,18 +16,17 @@
     display: grid;
     grid-template-columns: auto 1fr;
     @include mobile-only() {
-      align-items: center;
-      justify-content: center;
+      @include flex-center;
     }
-    @include mobile-only(){
+    @include mobile-only() {
       width: 100%;
     }
   }
   &__img {
     // border-radius: 20%;
     content: url('/assets/images/ah_profile.png');
+    @extend %overflow-hidden;
     background-image: url('/assets/images/ah_profile.png');
-    overflow: hidden;
     padding: 5px 10px 0 10px;
     width: 148px;
     height: 116px;
@@ -74,7 +73,7 @@
     }
   }
   & &__menu {
-    position: relative;
+    @extend %position-relative;
     padding-bottom: 10px;
     @include mobile-only() {
       display: none;
@@ -107,7 +106,7 @@
     }
   }
   & &__hero-slider {
-    position: absolute;
+    @extend %position-absolute;
     bottom: 4px;
     height: 2px;
     background: #fff;

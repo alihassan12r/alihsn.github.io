@@ -6,10 +6,6 @@
 $mainColor: map-get($colors, main);
 $darkColor: map-get($colors, dark);
 
-
-// --themes---- //
-
-
 @mixin main {
   p,
   h1,
@@ -19,9 +15,6 @@ $darkColor: map-get($colors, dark);
     color: var(--text-color) !important;
   }
 }
-
-
-// --dark theme-- //
 
 @mixin dark() {
   $primary-color: map-get($mainColor, primary-color);

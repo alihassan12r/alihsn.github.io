@@ -1,4 +1,3 @@
-import React from 'react';
 import '../../style/sass/pages/content/_content.scss';
 
 import ContractTab from './tabs/ContractTab';

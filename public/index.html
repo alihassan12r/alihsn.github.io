@@ -12,9 +12,29 @@
     <meta name="keywords" content="ali hassan, AH, ah web developer, ah programmer" />
     <meta name="description" content="ali hassan full stack web developer" />
     <meta name="application-name" content="Ali Hassan" />
+    <style>
+      @font-face {
+        font-family: 'Montserrat';
+        src: url('%PUBLIC_URL%/assets/fonts/montserrat-light.woff2') format('woff2'),
+          url('%PUBLIC_URL%/assets/fonts/montserrat-light.woff') format('woff'),
+          url('%PUBLIC_URL%/assets/fonts/montserrat-light.ttf') format('truetype');
+        font-weight: 300;
+        font-style: normal;
+        font-display: swap;
+      }
+    </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="ah-root" class="AH"></div>
+    <script>
+      (function (root, placeholderClass, ariaLabel) {
+        const placeholderElement = document.createElement('div');
+        placeholderElement.setAttribute('class', placeholderClass);
+        placeholderElement.setAttribute('aria-label', ariaLabel);
+        const theRoot = document.querySelector(root);
+        theRoot.insertBefore(placeholderElement, theRoot.firstElementChild);
+      })('body', 'placeholder', 'Loading…');
+    </script>
   </body>
 </html>

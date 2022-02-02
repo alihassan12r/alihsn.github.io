@@ -1,5 +1,3 @@
-/* eslint-disable no-return-assign */
-import React from 'react';
 import '../../../style/sass/pages/content/tabs/_aboutTab.scss';
 
 const AboutTab = function () {

@@ -1,7 +1,8 @@
+@import './sass//helper/utls';
 .AH {
   .ah-content {
-    height: 100vh;
-    position: relative;
+    @extend %height-100vh;
+    @extend %position-relative;
     display: grid;
     grid-template-rows: [header] auto [body] 1fr [footer] auto;
   }

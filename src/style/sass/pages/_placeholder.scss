@@ -1,0 +1,60 @@
+@import '../helper/utls';
+
+/* -- placeholder -- */
+.placeholder {
+  @extend %position-fixed;
+  @extend %display-flex;
+  @extend %flex-direction-column;
+  @extend %flex-center;
+  @extend %overflow-hidden;
+  @extend %height-100;
+  @extend %background-secondary;
+  z-index: 100;
+  width: 100vw;
+  float: left;
+
+  &::before {
+    content: 'AH';
+    @extend %position-relative;
+    opacity: 0.5;
+    font-size: 2.6em;
+    color: rgb(165, 17, 17);
+    font-family: sans-serif, Arial, Verdana;
+    font-weight: bold;
+    animation: placeholder-ah-animate 0.8s forwards;
+  }
+
+  &--close {
+    animation: placeholder-close-animate cubic-bezier(0.23, 1, 0.32, 1) 2s forwards;
+  }
+
+  ~ #ah-root .ah-content {
+    @extend %overflow-hidden;
+    height: 0;
+    visibility: hidden;
+  }
+
+  @keyframes placeholder-close-animate {
+    0% {
+      background: var(--secondary-color);
+    }
+    40% {
+      transform: scale(1);
+    }
+    60% {
+      transform: scale(1.05);
+    }
+    90% {
+      transform: scale(1);
+    }
+    100% {
+      visibility: hidden;
+    }
+  }
+
+  @keyframes placeholder-ah-animate {
+    100% {
+      opacity: 1;
+    }
+  }
+}

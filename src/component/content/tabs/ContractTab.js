@@ -1,4 +1,3 @@
-import React from 'react';
 import '../../../style/sass/pages/content/tabs/_contactTab.scss';
 
 const ContractTab = function () {

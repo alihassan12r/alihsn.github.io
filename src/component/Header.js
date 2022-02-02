@@ -1,7 +1,7 @@
-/* eslint-disable no-return-assign */
+import '../style/sass/pages/_header.scss';
+
 import React from 'react';
 import Options from './Options';
-import '../style/sass/pages/_header.scss';
 
 const Header = function () {
   let currentActiveTagElement = null;
